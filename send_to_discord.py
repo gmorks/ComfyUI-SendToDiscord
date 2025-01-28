@@ -10,8 +10,28 @@ import folder_paths
 import configparser
 
 class PreviewImageWithDiscord:
+    """
+    A class to handle the preview image generation and sending it to Discord via webhook.
+    
+    Attributes:
+        output_dir (str): The directory where temporary images are stored.
+        type (str): The type of the generated images, default is 'temp'.
+        prefix_append (str): A random string appended to image filenames for uniqueness.
+        compress_level (int): Compression level for saving images.
+        webhook_url (str): URL for Discord webhook to send the image.
+        batch_size (int): Number of images to accumulate before sending a batch to Discord.
+        image_queue (list): A list to hold paths of images waiting to be sent to Discord.
+    """
+
     def __init__(self):
-        self.output_dir = folder_paths.get_temp_directory()
+        """
+        Initializes the PreviewImageWithDiscord class with default values and settings.
+        
+        - Sets the output directory for temporary images using `folder_paths.get_temp_directory()`.
+        - Defines a prefix to be appended to image filenames for uniqueness.
+        - Loads the webhook URL from a configuration file.
+        """
+        self.output_dir = folder_paths.get_temp_directory() # Ensure this is thread-safe if used in a multithreaded environment
         self.type = "temp"
         self.prefix_append = "_temp_" + ''.join(random.choice("abcdefghijklmnopqrstupvxyz") for x in range(5))
         self.compress_level = 1
@@ -20,13 +40,27 @@ class PreviewImageWithDiscord:
         self.image_queue = []
 
     def load_webhook_url(self):
+        """
+        Loads the webhook URL from a configuration file.
+        
+        Returns:
+            str: The webhook URL if found, otherwise an empty string.
+        """
         config = configparser.ConfigParser()
         config_path = os.path.join(os.path.dirname(__file__), 'config.ini')
         config.read(config_path)
-        return config.get('Discord', 'webhook_url', fallback='')
+        # Retrieve the webhook URL from the Discord section in the configuration file
+        webhook_url = config.get('Discord', 'webhook_url', fallback='')
+        return webhook_url
 
     @classmethod
     def INPUT_TYPES(s):
+        """
+        Defines the input types for the node.
+        
+        Returns:
+            dict: A dictionary specifying required and hidden inputs.
+        """
         return {"required":
                     {"images": ("IMAGE", ),
                      "send_to_discord": (["enable", "disable"], {"default": "disable"}),
@@ -40,6 +74,19 @@ class PreviewImageWithDiscord:
     CATEGORY = "image"
 
     def preview_images(self, images, send_to_discord="disable", batch_mode="disable", prompt=None, extra_pnginfo=None):
+        """
+        Previews images and optionally sends them to Discord.
+        
+        Args:
+            images (list): List of images to preview.
+            send_to_discord (str): Whether to send images to Discord ("enable" or "disable").
+            batch_mode (str): Whether to send images in batch mode ("enable" or "disable").
+            prompt (str, optional): Prompt text to add as metadata.
+            extra_pnginfo (dict, optional): Additional PNG info to add as metadata.
+        
+        Returns:
+            dict: A dictionary containing the UI results with image details.
+        """
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path("ComfyUI", self.output_dir, images[0].shape[1], images[0].shape[0])
         results = list()
         for image in images:
@@ -63,6 +110,7 @@ class PreviewImageWithDiscord:
                 "type": self.type
             })
 
+            # Send image to Discord if enabled
             if send_to_discord == "enable" and self.webhook_url:
                 if batch_mode == "enable":
                     self.image_queue.append(full_path)
@@ -80,6 +128,13 @@ class PreviewImageWithDiscord:
         return { "ui": { "images": results } }
 
     def send_to_discord(self, image_path, filename):
+        """
+        Sends a single image to Discord.
+        
+        Args:
+            image_path (str): The path to the image file.
+            filename (str): The name of the image file.
+        """
         with open(image_path, 'rb') as img_file:
             files = {
                 'file': (filename, img_file, 'image/png')
@@ -95,6 +150,9 @@ class PreviewImageWithDiscord:
                 print(f"Error sending image to Discord: {e}")
 
     def send_batch_to_discord(self):
+        """
+        Sends a batch of images to Discord.
+        """
         files = {}
         for i, image_path in enumerate(self.image_queue):
             with open(image_path, 'rb') as img_file:
@@ -117,6 +175,7 @@ NODE_CLASS_MAPPINGS = {
     "PreviewImageWithDiscord": PreviewImageWithDiscord
 }
 
+# Node display name mappings
 NODE_DISPLAY_NAME_MAPPINGS = {
     "PreviewImageWithDiscord": "Preview Image (with Discord option)"
 }
