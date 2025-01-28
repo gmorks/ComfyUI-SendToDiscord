@@ -30,6 +30,7 @@ comfy node registry-install comfyui-sendtodiscord
     ```
 2. Install dependencies:
     ```bash
+    cd ComfyUI-SendToDiscord
     pip install -r requirements.txt
     ```
 3. Configure the `config.ini` file:
