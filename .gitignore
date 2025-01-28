@@ -5,3 +5,5 @@ __pycache__/
 assets/
 # Ignore pyproject.toml
 pyproject.toml
+# Ignore node.zip
+node.zip
