@@ -3,3 +3,5 @@ config.ini
 __pycache__/
 # Ignore assets folder
 assets/
+# Ignore pyproject.toml
+pyproject.toml
