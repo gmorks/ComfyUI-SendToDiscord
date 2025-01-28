@@ -25,13 +25,21 @@ ComfyUI-SendToDiscord is a custom node for [ComfyUI](https://github.com/comfyano
     ```bash
     pip install -r requirements.txt
     ```
-3. Add your Discord webhook URL to the `config.ini` file located in the root directory:
-    ```ini
-    # Configuration file for ComfyUI-SendToDiscord
-    # Replace 'your-webhook-url-here' with your Discord webhook URL.
-    [Discord]
-    webhook_url = https://discord.com/api/webhooks/your-webhook-id
-    ```
+3. Configure the `config.ini` file:
+    - Locate the `config.ini.template` file in the root directory.
+    - Copy it and rename it to `config.ini`:
+        ```bash
+        cp config.ini.template config.ini
+        ```
+    - Open the `config.ini` file and replace the placeholder with your Discord webhook URL:
+        ```ini
+        ; Configuration file for ComfyUI-SendToDiscord
+        ; Replace 'your-webhook-url-here' with your Discord webhook URL.
+        ; You can get a webhook URL by going to your Discord server settings, then Integrations, then Webhooks, then New Webhook.
+
+        [Discord]
+        webhook_url = your-webhook-url-here
+        ```
 ### Dependencies
 This node has been tested with the following Python packages:
 
