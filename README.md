@@ -26,7 +26,7 @@ comfy node registry-install comfyui-sendtodiscord
 ## Manual Install
 1. Clone the repository into your ComfyUI custom nodes directory:
     ```bash
-    git clone https://github.com/yourusername/ComfyUI-SendToDiscord.git
+    git clone https://github.com/gmorks/ComfyUI-SendToDiscord.git
     ```
 2. Install dependencies:
     ```bash
