@@ -1,3 +1,5 @@
 config.ini
 # Ignore __pycache__ folders
 __pycache__/
+# Ignore assets folder
+assets/
