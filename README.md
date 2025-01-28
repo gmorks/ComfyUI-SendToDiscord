@@ -16,7 +16,14 @@ ComfyUI-SendToDiscord is a custom node for [ComfyUI](https://github.com/comfyano
 - `Pillow`, `requests`, and `numpy` libraries (automatically installed via `requirements.txt`).
 
 ## Installation
+- [Find it at ComfyUI Registry](https://registry.comfy.org/publishers/gmorks/nodes/comfyui-sendtodiscord) 
+- Or using [comfy-cli](https://docs.comfy.org/comfy-cli/getting-started):
 
+```bash
+comfy node registry-install comfyui-sendtodiscord
+```
+
+## Manual Install
 1. Clone the repository into your ComfyUI custom nodes directory:
     ```bash
     git clone https://github.com/yourusername/ComfyUI-SendToDiscord.git
