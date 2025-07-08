@@ -1,0 +1,120 @@
+
+# ComfyUI Error Report
+## Error Details
+- **Node ID:** N/A
+- **Node Type:** N/A
+- **Exception Type:** Prompt execution failed
+- **Exception Message:** Prompt has no outputs: 
+## Stack Trace
+```
+PromptExecutionError@http://127.0.0.1:8188/assets/index-CWzmkThr.js:120930:5
+queuePrompt@http://127.0.0.1:8188/assets/index-CWzmkThr.js:121273:13
+
+```
+## System Information
+- **ComfyUI Version:** 0.3.43
+- **Arguments:** main.py
+- **OS:** nt
+- **Python Version:** 3.12.9 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 18:49:16) [MSC v.1929 64 bit (AMD64)]
+- **Embedded Python:** false
+- **PyTorch Version:** 2.7.1+cu126
+## Devices
+
+- **Name:** cuda:0 NVIDIA GeForce RTX 3060 : native
+  - **Type:** cuda
+  - **VRAM Total:** 12884246528
+  - **VRAM Free:** 11788091392
+  - **Torch VRAM Total:** 0
+  - **Torch VRAM Free:** 0
+
+## Logs
+```
+2025-07-07T23:32:20.547599 - [START] Security scan2025-07-07T23:32:20.547599 - 
+2025-07-07T23:32:21.749098 - [DONE] Security scan2025-07-07T23:32:21.749098 - 
+2025-07-07T23:32:21.880842 - ## ComfyUI-Manager: installing dependencies done.2025-07-07T23:32:21.880842 - 
+2025-07-07T23:32:21.881841 - ** ComfyUI startup time:2025-07-07T23:32:21.881841 -  2025-07-07T23:32:21.881841 - 2025-07-07 23:32:21.8812025-07-07T23:32:21.881841 - 
+2025-07-07T23:32:21.881841 - ** Platform:2025-07-07T23:32:21.881841 -  2025-07-07T23:32:21.881841 - Windows2025-07-07T23:32:21.881841 - 
+2025-07-07T23:32:21.881841 - ** Python version:2025-07-07T23:32:21.881841 -  2025-07-07T23:32:21.881841 - 3.12.9 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 18:49:16) [MSC v.1929 64 bit (AMD64)]2025-07-07T23:32:21.881841 - 
+2025-07-07T23:32:21.881841 - ** Python executable:2025-07-07T23:32:21.882841 -  2025-07-07T23:32:21.882841 - F:\Alex\Desktop\comfyui_node_dev\.venv\Scripts\python.exe2025-07-07T23:32:21.882841 - 
+2025-07-07T23:32:21.882841 - ** ComfyUI Path:2025-07-07T23:32:21.882841 -  2025-07-07T23:32:21.882841 - F:\ComfyUI\2025-07-07T23:32:21.882841 - 
+2025-07-07T23:32:21.882841 - ** ComfyUI Base Folder Path:2025-07-07T23:32:21.882841 -  2025-07-07T23:32:21.882841 - F:\ComfyUI\2025-07-07T23:32:21.882841 - 
+2025-07-07T23:32:21.882841 - ** User directory:2025-07-07T23:32:21.883841 -  2025-07-07T23:32:21.883841 - F:\Alex\Desktop\comfyui_node_dev\ComfyUI\user2025-07-07T23:32:21.883841 - 
+2025-07-07T23:32:21.883841 - ** ComfyUI-Manager config path:2025-07-07T23:32:21.883841 -  2025-07-07T23:32:21.883841 - F:\Alex\Desktop\comfyui_node_dev\ComfyUI\user\default\ComfyUI-Manager\config.ini2025-07-07T23:32:21.883841 - 
+2025-07-07T23:32:21.883841 - ** Log path:2025-07-07T23:32:21.883841 -  2025-07-07T23:32:21.883841 - F:\Alex\Desktop\comfyui_node_dev\ComfyUI\user\comfyui.log2025-07-07T23:32:21.883841 - 
+2025-07-07T23:32:23.286623 - 
+Prestartup times for custom nodes:
+2025-07-07T23:32:23.286623 -    3.7 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\ComfyUI-Manager
+2025-07-07T23:32:23.286623 - 
+2025-07-07T23:32:25.149195 - Checkpoint files will always be loaded safely.
+2025-07-07T23:32:25.250105 - Total VRAM 12287 MB, total RAM 65457 MB
+2025-07-07T23:32:25.251106 - pytorch version: 2.7.1+cu126
+2025-07-07T23:32:25.252104 - Set vram state to: NORMAL_VRAM
+2025-07-07T23:32:25.252104 - Device: cuda:0 NVIDIA GeForce RTX 3060 : native
+2025-07-07T23:32:26.996762 - Using pytorch attention
+2025-07-07T23:32:29.400084 - Python version: 3.12.9 | packaged by Anaconda, Inc. | (main, Feb  6 2025, 18:49:16) [MSC v.1929 64 bit (AMD64)]
+2025-07-07T23:32:29.400084 - ComfyUI version: 0.3.43
+2025-07-07T23:32:29.446467 - ComfyUI frontend version: 1.23.4
+2025-07-07T23:32:29.448469 - [Prompt Server] web root: F:\Alex\Desktop\comfyui_node_dev\.venv\Lib\site-packages\comfyui_frontend_package\static
+2025-07-07T23:32:30.660864 - State loaded successfully
+2025-07-07T23:32:30.661861 - CSV history loaded successfully
+2025-07-07T23:32:30.716029 - jjk_util loding2025-07-07T23:32:30.716029 - 
+2025-07-07T23:32:30.726574 - ### Loading: ComfyUI-Manager (V3.33.8)
+2025-07-07T23:32:30.726574 - [ComfyUI-Manager] network_mode: public
+2025-07-07T23:32:31.055303 - ### ComfyUI Version: v0.3.43-26-ge740dfd8 | Released on '2025-07-07'
+2025-07-07T23:32:31.356145 - 
+Import times for custom nodes:
+2025-07-07T23:32:31.356145 -    0.0 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\websocket_image_save.py
+2025-07-07T23:32:31.356145 -    0.0 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\comfyui-display-value
+2025-07-07T23:32:31.356145 -    0.0 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\ComfyUI-Jjk-Nodes
+2025-07-07T23:32:31.356145 -    0.0 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\comfyui-custom-scripts
+2025-07-07T23:32:31.356145 -    0.0 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\ComfyUI-SendToDiscord
+2025-07-07T23:32:31.356145 -    0.3 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\ComfyUI-Animagine-Prompt
+2025-07-07T23:32:31.357142 -    0.6 seconds: F:\Alex\Desktop\comfyui_node_dev\ComfyUI\custom_nodes\ComfyUI-Manager
+2025-07-07T23:32:31.357142 - 
+2025-07-07T23:32:31.476630 - [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+2025-07-07T23:32:31.488645 - [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+2025-07-07T23:32:31.523703 - [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+2025-07-07T23:32:31.578315 - [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+2025-07-07T23:32:31.623887 - [ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+2025-07-07T23:32:32.088087 - Context impl SQLiteImpl.
+2025-07-07T23:32:32.088087 - Will assume non-transactional DDL.
+2025-07-07T23:32:32.089602 - No target revision found.
+2025-07-07T23:32:32.120644 - Starting server
+
+2025-07-07T23:32:32.121647 - To see the GUI go to: http://127.0.0.1:8188
+2025-07-07T23:32:34.608182 - FETCH ComfyRegistry Data: 5/912025-07-07T23:32:34.608182 - 
+2025-07-07T23:32:37.664521 - FETCH ComfyRegistry Data: 10/912025-07-07T23:32:37.665521 - 
+2025-07-07T23:32:40.772723 - FETCH ComfyRegistry Data: 15/912025-07-07T23:32:40.772723 - 
+2025-07-07T23:32:43.495940 - got prompt
+2025-07-07T23:32:43.495940 - invalid prompt: {'type': 'prompt_no_outputs', 'message': 'Prompt has no outputs', 'details': '', 'extra_info': {}}
+2025-07-07T23:32:43.806274 - FETCH ComfyRegistry Data: 20/912025-07-07T23:32:43.807269 - 
+2025-07-07T23:32:46.859044 - FETCH ComfyRegistry Data: 25/912025-07-07T23:32:46.859044 - 
+2025-07-07T23:32:49.846180 - FETCH ComfyRegistry Data: 30/912025-07-07T23:32:49.846180 - 
+2025-07-07T23:32:53.627295 - FETCH ComfyRegistry Data: 35/912025-07-07T23:32:53.627295 - 
+2025-07-07T23:32:56.712527 - FETCH ComfyRegistry Data: 40/912025-07-07T23:32:56.712527 - 
+2025-07-07T23:33:00.369889 - FETCH ComfyRegistry Data: 45/912025-07-07T23:33:00.370888 - 
+2025-07-07T23:33:03.418851 - FETCH ComfyRegistry Data: 50/912025-07-07T23:33:03.418851 - 
+2025-07-07T23:33:06.536026 - FETCH ComfyRegistry Data: 55/912025-07-07T23:33:06.537028 - 
+2025-07-07T23:33:09.630203 - FETCH ComfyRegistry Data: 60/912025-07-07T23:33:09.630203 - 
+2025-07-07T23:33:13.402533 - FETCH ComfyRegistry Data: 65/912025-07-07T23:33:13.403534 - 
+2025-07-07T23:33:17.131215 - FETCH ComfyRegistry Data: 70/912025-07-07T23:33:17.131215 - 
+2025-07-07T23:33:20.199542 - FETCH ComfyRegistry Data: 75/912025-07-07T23:33:20.199542 - 
+2025-07-07T23:33:23.359758 - FETCH ComfyRegistry Data: 80/912025-07-07T23:33:23.359758 - 
+2025-07-07T23:33:26.526590 - FETCH ComfyRegistry Data: 85/912025-07-07T23:33:26.526590 - 
+2025-07-07T23:33:29.536282 - FETCH ComfyRegistry Data: 90/912025-07-07T23:33:29.536282 - 
+2025-07-07T23:33:30.642835 - FETCH ComfyRegistry Data [DONE]2025-07-07T23:33:30.642835 - 
+2025-07-07T23:33:30.788265 - [ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+2025-07-07T23:33:30.810303 - FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json2025-07-07T23:33:30.810303 - 2025-07-07T23:33:30.987707 -  [DONE]2025-07-07T23:33:30.987707 - 
+2025-07-07T23:33:31.053282 - [ComfyUI-Manager] All startup tasks have been completed.
+2025-07-07T23:33:53.215932 - got prompt
+2025-07-07T23:33:53.215932 - invalid prompt: {'type': 'prompt_no_outputs', 'message': 'Prompt has no outputs', 'details': '', 'extra_info': {}}
+
+```
+## Attached Workflow
+Please make sure that workflow does not contain any sensitive information such as API keys or passwords.
+```
+{"id":"00000000-0000-0000-0000-000000000000","revision":0,"last_node_id":6,"last_link_id":7,"nodes":[{"id":6,"type":"ImageBatch","pos":[482.96026611328125,357.0851135253906],"size":[140,46],"flags":{},"order":2,"mode":0,"inputs":[{"localized_name":"image1","name":"image1","type":"IMAGE","link":5},{"localized_name":"image2","name":"image2","type":"IMAGE","link":6}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[7]}],"properties":{"cnr_id":"comfy-core","ver":"0.3.43","Node name for S&R":"ImageBatch"},"widgets_values":[]},{"id":4,"type":"PreviewImageWithDiscord","pos":[680.9085083007812,354.81817626953125],"size":[263.9666748046875,344],"flags":{},"order":3,"mode":0,"inputs":[{"localized_name":"images","name":"images","type":"IMAGE","link":7},{"localized_name":"send_to_discord","name":"send_to_discord","type":"COMBO","widget":{"name":"send_to_discord"},"link":null},{"localized_name":"batch_mode","name":"batch_mode","type":"COMBO","widget":{"name":"batch_mode"},"link":null}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[]}],"properties":{"cnr_id":"comfyui-sendtodiscord","ver":"17abe1485a2a724f44767543a6e6e870eaa32884","Node name for S&R":"PreviewImageWithDiscord"},"widgets_values":["enable","disable"]},{"id":5,"type":"LoadImage","pos":[116.22103118896484,718.6907958984375],"size":[274,314],"flags":{},"order":0,"mode":0,"inputs":[{"localized_name":"image","name":"image","type":"COMBO","widget":{"name":"image"},"link":null},{"localized_name":"choose file to upload","name":"upload","type":"IMAGEUPLOAD","widget":{"name":"upload"},"link":null}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[5]},{"localized_name":"MASK","name":"MASK","type":"MASK","links":null}],"properties":{"cnr_id":"comfy-core","ver":"0.3.43","Node name for S&R":"LoadImage"},"widgets_values":["ComfyUI_temp_ilxtz_00011_.png","image"]},{"id":2,"type":"LoadImage","pos":[108,332],"size":[274,314],"flags":{},"order":1,"mode":0,"inputs":[{"localized_name":"image","name":"image","type":"COMBO","widget":{"name":"image"},"link":null},{"localized_name":"choose file to upload","name":"upload","type":"IMAGEUPLOAD","widget":{"name":"upload"},"link":null}],"outputs":[{"localized_name":"IMAGE","name":"IMAGE","type":"IMAGE","links":[6]},{"localized_name":"MASK","name":"MASK","type":"MASK","links":null}],"properties":{"cnr_id":"comfy-core","ver":"0.3.43","Node name for S&R":"LoadImage"},"widgets_values":["ComfyUI_00045_.png","image"]}],"links":[[5,5,0,6,0,"IMAGE"],[6,2,0,6,1,"IMAGE"],[7,6,0,4,0,"IMAGE"]],"groups":[],"config":{},"extra":{"ds":{"scale":1.1,"offset":[87.01042563636398,-245.8818633636361]}},"version":0.4}
+```
+
+## Additional Context
+(Please add any additional context or steps to reproduce the error here)

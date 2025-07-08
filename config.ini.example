@@ -1,0 +1,46 @@
+# Example configuration file for ComfyUI-SendToDiscord
+# Copy this file as 'config.ini' and configure your values
+
+[Discord]
+# Discord webhook URL (REQUIRED)
+# Get your webhook from: Server Settings > Integrations > Webhooks
+webhook_url = https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN
+
+[Fallback]
+# Enable automatic fallback (individual sending if batch fails)
+# Values: true/false
+enable_fallback = true
+
+# Enable automatic image compression
+# Values: true/false
+# NOTE: Disabling this preserves original quality and metadata
+# WARNING: When compression is enabled, ComfyUI workflow metadata will be lost
+#          due to WebP format conversion. Disable compression to preserve workflows.
+enable_compression = true
+
+# Compression quality (only if enable_compression = true)
+# Values: 1-100 (100 = maximum quality, larger size)
+# Recommended: 80 for quality/size balance
+compression_quality = 80
+
+# Maximum file size before applying compression (in MB)
+# Discord has a 25MB total limit per message
+# Recommended: 8MB to leave margin for batch sending
+max_file_size_mb = 8
+
+# RECOMMENDED CONFIGURATION FOR DIFFERENT CASES:
+#
+# For maximum quality (lossless):
+# enable_compression = false
+# enable_fallback = true
+#
+# For quality/speed balance:
+# enable_compression = true
+# compression_quality = 80
+# enable_fallback = true
+#
+# For maximum speed:
+# enable_compression = true
+# compression_quality = 60
+# enable_fallback = true
+# max_file_size_mb = 5

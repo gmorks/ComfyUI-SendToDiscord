@@ -3,5 +3,7 @@ config.ini
 __pycache__/
 # Ignore assets folder
 assets/
-# Ignore node.zip
-node.zip
+# Ignore references
+references/
+# Ignore memory-bank
+.memory-bank/
