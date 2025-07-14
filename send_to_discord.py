@@ -153,8 +153,8 @@ class PreviewImageWithDiscord:
         """
         return {"required":
                     {"images": ("IMAGE", ),
-                     "send_to_discord": (["enable", "disable"], {"default": "disable"}),
-                     "batch_mode": (["enable", "disable"], {"default": "disable"})},
+                     "send_to_discord": ("BOOLEAN", {"default": False}),
+                     "batch_mode": ("BOOLEAN", {"default": False})},
                 "optional":
                     {"passthrough_image": ("IMAGE", )},
                 "hidden": {"prompt": "PROMPT", "extra_pnginfo": "EXTRA_PNGINFO"},
@@ -166,14 +166,14 @@ class PreviewImageWithDiscord:
     OUTPUT_NODE = True
     CATEGORY = "image"
 
-    def preview_images(self, images, send_to_discord="disable", batch_mode="disable", passthrough_image=None, prompt=None, extra_pnginfo=None):
+    def preview_images(self, images, send_to_discord=False, batch_mode=False, passthrough_image=None, prompt=None, extra_pnginfo=None):
         """
         Previews images and optionally sends them to Discord.
         
         Args:
             images (list): List of images to preview.
-            send_to_discord (str): Whether to send images to Discord ("enable" or "disable").
-            batch_mode (str): Whether to send images in batch mode ("enable" or "disable").
+            send_to_discord (bool): Whether to send images to Discord.
+            batch_mode (bool): Whether to send images in batch mode.
             passthrough_image (list, optional): Optional image input for passthrough.
             prompt (str, optional): Prompt text to add as metadata.
             extra_pnginfo (dict, optional): Additional PNG info to add as metadata.
@@ -205,13 +205,13 @@ class PreviewImageWithDiscord:
             })
 
             # Send image to Discord if enabled
-            if send_to_discord == "enable" and self.webhook_url:
+            if send_to_discord and self.webhook_url:
                 # Extract workflow JSON if available
                 workflow_json = None
                 if extra_pnginfo and 'workflow' in extra_pnginfo:
                     workflow_json = extra_pnginfo['workflow']
                 
-                if batch_mode == "enable":
+                if batch_mode:
                     # Store both image path and workflow JSON for batch processing
                     self.image_queue.append((full_path, file, workflow_json))
                     if len(self.image_queue) >= self.batch_size:
@@ -222,7 +222,7 @@ class PreviewImageWithDiscord:
             counter += 1
 
         # Send any remaining images in the queue
-        if send_to_discord == "enable" and batch_mode == "enable" and self.image_queue:
+        if send_to_discord and batch_mode and self.image_queue:
             self.send_batch_to_discord()
 
         # Log workflow JSON if available (useful for debugging and potential future features)

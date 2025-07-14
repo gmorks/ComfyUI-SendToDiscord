@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-sendtodiscord"
 description = "ComfyUI-SendToDiscord is a custom node for ComfyUI that simplifies sending preview images to Discord via webhooks. It supports both single-image uploads and batch mode, making it an efficient tool for sharing your generated images directly with your Discord server."
-version = "1.2.1"
+version = "1.2.2"
 license = {file = "LICENSE"}
 dependencies = ["Pillow>=9.5.0", "requests>=2.28.2", "numpy>=1.23.5"]
 
